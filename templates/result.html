@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Resume Analysis Result</h1>
+
+    <h2>Selected Role: {{ selected_role }}</h2>
+
+    <h2>Resume Score: {{ score }}/100</h2>
+
+    <h3>Skills Found:</h3>
+    <ul>
+        {% for skill in found_skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Missing Skills:</h3>
+    <ul>
+        {% for skill in missing_skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Basic Suggestion:</h3>
+    <p>{{ suggestion }}</p>
+
+    <h3>AI-Powered Professional Suggestions:</h3>
+    <p>{{ ai_suggestion }}</p>
+
+    <br>
+
+    <a href="/">Analyze Another Resume</a>
+
+</body>
+</html>
